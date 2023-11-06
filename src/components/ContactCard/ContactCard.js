@@ -1,6 +1,9 @@
 
 
-export const ContactCard = ({ contact:{name, number} }) => {
+export const ContactCard =
+  ({ contact: { id, name, number },
+    onDelete,
+  }) => {
   return (
     <>
     <p>
@@ -9,7 +12,7 @@ export const ContactCard = ({ contact:{name, number} }) => {
         {number}
       </span>
       </p>
-      <button>Delete</button>
+      <button onClick={()=> onDelete(id)}>Delete</button>
     </>
   )
 }
