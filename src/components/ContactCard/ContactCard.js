@@ -1,4 +1,4 @@
-
+import { DeleteButton, Text, NumberText  } from "./ContactCard.styled"
 
 export const ContactCard =
   ({ contact: { id, name, number },
@@ -6,13 +6,13 @@ export const ContactCard =
   }) => {
   return (
     <>
-    <p>
+    <Text>
       {name}
-      <span>
+      <NumberText>
         {number}
-      </span>
-      </p>
-      <button onClick={()=> onDelete(id)}>Delete</button>
+      </NumberText>
+      </Text>
+      <DeleteButton onClick={()=> onDelete(id)}>Delete</DeleteButton>
     </>
   )
 }
