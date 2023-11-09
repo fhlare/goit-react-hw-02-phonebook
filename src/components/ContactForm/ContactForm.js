@@ -2,9 +2,10 @@ import { Formik,} from 'formik';
 import * as Yup from 'yup';
 import { Form, Field, ErrorMessage, FormGroup } from './ConrtactForm.styled';
 
+const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 const contactSchema = Yup.object().shape({
   name: Yup.string().min(2, 'Too Short!').required('Required'),
-  number: Yup.number().min(6, 'At least ').required('Required'),
+  number: Yup.string().matches(phoneRegExp, 'Phone number is not valid').required('Required'),
 });
 
 export const ContactForm = ({ addContact }) => {
