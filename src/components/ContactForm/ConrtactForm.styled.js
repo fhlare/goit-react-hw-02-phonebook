@@ -11,7 +11,7 @@ export const Form = styled(FormikForm)`
   flex-direction: column;
   border: 2px solid black;
   gap: 8px;
-  max-width: 320px;
+  width: 320px;
   padding: 10px;
 `;
 
